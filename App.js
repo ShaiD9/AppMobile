@@ -2,11 +2,13 @@ import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Connexion from './pages/connexion.js';
+import Accueil from './pages/accueil.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Connexion />
+      <Accueil />
     </View>
   );
 }

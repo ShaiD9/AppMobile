@@ -1,24 +1,27 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
 
-export default function Connexion() {
+export default function Accueil() {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>FDR_Mobile - Connexion</Text>
-        <Text style={styles.label}>Nom d'utilisateur :</Text>
-        <TextInput style={styles.input} placeholder="" />
-        <Text style={styles.label}>Mot de passe :</Text>
-        <TextInput style={styles.input} placeholder="" secureTextEntry={true} />
-        <Button color='#3333ff' title="Connexion" onPress={ConnexionAlert} />
+        <Text style={styles.title}>FDR_Mobile - Accueil</Text>
+        <TouchableOpacity activeOpacity={1} style={styles.button}>
+            <Button color='#3399ff' marginBottom='' title="Data" onPress={DataAlert} />
+        </TouchableOpacity>
+        <Button color='#3333ff' title="Déconnection" onPress={DeconnectionAlert} />
       </View>
     </View>
   );
 }
 
-const ConnexionAlert = () => {
-    alert('Connexion effectué avec succès');
+const DataAlert = () => {
+    alert('Redirection vers la page Data');
+};
+
+const DeconnectionAlert = () => {
+    alert('Vous avez été déconnecté avec succès');
 };
 
 const styles = StyleSheet.create({
@@ -40,6 +43,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    
   },
   input: {
     height: 40,
@@ -55,5 +59,11 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
+  },
+  button: {
+    height: 50,
+    backgroundColor: '3399ff',
+    marginTop: 20,
+    marginBottom: 20,
   },
 });
