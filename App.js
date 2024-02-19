@@ -11,7 +11,7 @@ export default function App() {
         <TextInput style={styles.input} placeholder="" />
         <Text style={styles.label}>Mot de passe :</Text>
         <TextInput style={styles.input} placeholder="" secureTextEntry={true} />
-        <Button title="Login" onPress={() => {}} />
+        <Button color='#3333ff' title="Connexion" onPress={() => {}} />
       </View>
     </View>
   );
