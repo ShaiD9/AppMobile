@@ -1,15 +1,16 @@
+import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* Card with login form */}
       <View style={styles.card}>
-        {/* Form elements */}
         <Text style={styles.title}>FDR_Mobile - Connexion</Text>
-        <TextInput style={styles.input} placeholder="Username" />
-        <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} />
+        <Text style={styles.label}>Nom d'utilisateur :</Text>
+        <TextInput style={styles.input} placeholder="" />
+        <Text style={styles.label}>Mot de passe :</Text>
+        <TextInput style={styles.input} placeholder="" secureTextEntry={true} />
         <Button title="Login" onPress={() => {}} />
       </View>
     </View>
@@ -42,5 +43,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
+  },
+  title: {
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    fontSize: 24,
+  },
+  label: {
+    fontSize: 16,
   },
 });
