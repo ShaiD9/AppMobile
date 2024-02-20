@@ -11,7 +11,7 @@ export default function Connexion() {
         <TextInput style={styles.input} placeholder="" />
         <Text style={styles.label}>Mot de passe :</Text>
         <TextInput style={styles.input} placeholder="" secureTextEntry={true} />
-        <Button color='#3333ff' title="Connexion" onPress={ConnexionAlert} />
+        <Button color='#3333ff' title="Connexion" onPress={() => navigation.navigate('Accueil')} />
       </View>
     </View>
   );

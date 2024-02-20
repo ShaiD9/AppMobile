@@ -1,0 +1,7 @@
+import Connexion from './pages/connexion.js';
+import Accueil from './pages/accueil.js';
+import Data from './pages/data.js';
+
+<Connexion />
+<Accueil />
+<Data />
