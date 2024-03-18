@@ -31,9 +31,22 @@ export default function Accueil({ navigation }) {
       <View style={styles.card}>
         <Text style={styles.title}>FDR_Mobile - Accueil</Text>
         <TouchableOpacity activeOpacity={1} style={styles.button}>
-            <Button color='#3399ff' marginBottom='' title="Data" onPress={Data} />
+            <View style={{marginBottom: 8}}>
+            <Button color='#3399ff' title="FDR" onPress={Data} />
+            </View>
+            <View style={{marginBottom: 8}}>
+            <Button color='#3399ff' title="AGENCE" onPress={Data} />
+            </View>
+            <View style={{marginBottom: 8}}>
+            <Button color='#3399ff' title="VEHICULE" onPress={Data} />
+            </View>
+            <View style={{marginBottom: 8}}>
+            <Button color='#3399ff' title="AGENT" onPress={Data} />
+            </View>
+            <View style={{marginTop: 15}}>
+            <Button color='#3333ff' title="Déconnection" onPress={Deconnection} />
+            </View>
         </TouchableOpacity>
-        <Button color='#3333ff' title="Déconnection" onPress={Deconnection} />
       </View>
     </View>
   );
@@ -58,6 +71,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    height: 350,
   },
   input: {
     height: 40,
