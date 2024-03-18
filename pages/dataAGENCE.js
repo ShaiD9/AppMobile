@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
 import React, { useEffect } from 'react';
 
-export default function Accueil( { navigation } ) {
+export default function DataAGENCE( { navigation } ) {
   const Retour = () => {
     navigation.navigate('Accueil')
   };
@@ -37,7 +37,7 @@ export default function Accueil( { navigation } ) {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>FDR_Mobile - Data</Text>
+        <Text style={styles.title}>FDR_Mobile - DataAGENCE</Text>
         <Button color='#3333ff' title="Refresh Data" onPress={handleData} />
         <Button color='#3333ff' title="Retour" onPress={Retour} />
       </View>

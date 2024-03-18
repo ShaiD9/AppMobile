@@ -4,7 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Connexion from './pages/connexion.js';
 import Accueil from './pages/accueil.js';
-import Data from './pages/data.js';
+import DataFDR from './pages/dataFDR.js';
+import DataAGENCE from './pages/dataAGENCE.js';
+import DataAGENT from './pages/dataAGENT.js';
+import DataVEHICULE from './pages/dataVEHICULE.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +17,10 @@ function App() {
       <Stack.Navigator initialRouteName="Connexion">
         <Stack.Screen name="Connexion" component={Connexion} />
         <Stack.Screen name="Accueil" component={Accueil} />
-        <Stack.Screen name="Data" component={Data} />
+        <Stack.Screen name="DataFDR" component={DataFDR} />
+        <Stack.Screen name="DataAGENCE" component={DataAGENCE} />
+        <Stack.Screen name="DataAGENT" component={DataAGENT} />
+        <Stack.Screen name="DataVEHICULE" component={DataVEHICULE} />
       </Stack.Navigator>
     </NavigationContainer>
   );

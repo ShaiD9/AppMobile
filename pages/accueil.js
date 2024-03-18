@@ -3,8 +3,17 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Alert  } from 'react-native';
 
 export default function Accueil({ navigation }) {
-  const Data = () => {
-    navigation.navigate('Data')
+  const DataFDR = () => {
+    navigation.navigate('DataFDR')
+  };
+  const DataAGENCE = () => {
+    navigation.navigate('DataAGENCE')
+  };
+  const DataAGENT = () => {
+    navigation.navigate('DataAGENT')
+  };
+  const DataVEHICULE = () => {
+    navigation.navigate('DataVEHICULE')
   };
 
   const Deconnection = () => {
@@ -32,16 +41,16 @@ export default function Accueil({ navigation }) {
         <Text style={styles.title}>FDR_Mobile - Accueil</Text>
         <TouchableOpacity activeOpacity={1} style={styles.button}>
             <View style={{marginBottom: 8}}>
-            <Button color='#3399ff' title="FDR" onPress={Data} />
+            <Button color='#3399ff' title="FDR" onPress={DataFDR} />
             </View>
             <View style={{marginBottom: 8}}>
-            <Button color='#3399ff' title="AGENCE" onPress={Data} />
+            <Button color='#3399ff' title="AGENCE" onPress={DataAGENCE} />
             </View>
             <View style={{marginBottom: 8}}>
-            <Button color='#3399ff' title="VEHICULE" onPress={Data} />
+            <Button color='#3399ff' title="AGENT" onPress={DataAGENT} />
             </View>
             <View style={{marginBottom: 8}}>
-            <Button color='#3399ff' title="AGENT" onPress={Data} />
+            <Button color='#3399ff' title="VEHICULE" onPress={DataVEHICULE} />
             </View>
             <View style={{marginTop: 15}}>
             <Button color='#3333ff' title="Déconnection" onPress={Deconnection} />
