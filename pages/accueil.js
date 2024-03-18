@@ -3,8 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Alert  } from 'react-native';
 
 export default function Accueil({ navigation }) {
-  const DataAlert = () => {
-    alert('Redirection vers la page Data');
+  const Data = () => {
+    navigation.navigate('Data')
   };
 
   const Deconnection = () => {
@@ -31,7 +31,7 @@ export default function Accueil({ navigation }) {
       <View style={styles.card}>
         <Text style={styles.title}>FDR_Mobile - Accueil</Text>
         <TouchableOpacity activeOpacity={1} style={styles.button}>
-            <Button color='#3399ff' marginBottom='' title="Data" onPress={DataAlert} />
+            <Button color='#3399ff' marginBottom='' title="Data" onPress={Data} />
         </TouchableOpacity>
         <Button color='#3333ff' title="Déconnection" onPress={Deconnection} />
       </View>

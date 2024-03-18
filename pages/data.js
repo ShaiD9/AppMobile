@@ -2,20 +2,19 @@ import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
 
-export default function Accueil() {
+export default function Accueil( { navigation } ) {
+  const Retour = () => {
+    navigation.navigate('Accueil')
+  };
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>FDR_Mobile - Data</Text>
-        <Button color='#3333ff' title="Retour" onPress={RetourAlert} />
+        <Button color='#3333ff' title="Retour" onPress={Retour} />
       </View>
     </View>
   );
 }
-
-const RetourAlert = () => {
-    alert('Retour a la page d accueil');
-};
 
 const styles = StyleSheet.create({
   container: {
