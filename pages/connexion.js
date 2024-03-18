@@ -34,7 +34,7 @@ export default function Connexion({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.title}>FDR_Mobile - Connexion</Text>
+        <Text style={styles.title}>Connexion</Text>
         <Text style={styles.label}>Nom d'utilisateur (Email) :</Text>
         <TextInput style={styles.input} placeholder="" onChangeText={text => setMail(text)}/>
         <Text style={styles.label}>Mot de passe :</Text>
@@ -68,6 +68,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    height: auto,
+    width: 300,
   },
   input: {
     height: 40,
@@ -80,6 +82,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
     fontSize: 24,
+    textAlign: 'center',
   },
   label: {
     fontSize: 16,
