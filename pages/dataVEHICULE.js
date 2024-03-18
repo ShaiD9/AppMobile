@@ -9,7 +9,7 @@ export default function DataVEHICULE( { navigation } ) {
   };
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/data', {
+    fetch('http://206.189.31.42:8000/api/dataVEHICULE', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ export default function DataVEHICULE( { navigation } ) {
       if (data.status_code == 200) {
         
       } else {
-        alert('Problème')
+        //alert('Problème') debug
       }
     })
     .catch((error) => {
