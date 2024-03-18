@@ -1,8 +1,31 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Alert  } from 'react-native';
 
-export default function Accueil() {
+export default function Accueil({ navigation }) {
+  const DataAlert = () => {
+    alert('Redirection vers la page Data');
+  };
+
+  const Deconnection = () => {
+    Alert.alert(
+        "Déconnection",
+        "Voulez-vous vraiment vous déconnecter ?",
+        [
+            {
+              text: "OK", 
+                onPress: () => {
+                alert('Vous avez été déconnecté avec succès');
+                navigation.navigate('Connexion')
+            },
+            },
+            { 
+              text: "Cancel",
+              style: "cancel"
+            }
+        ]
+    );
+  };
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -10,19 +33,11 @@ export default function Accueil() {
         <TouchableOpacity activeOpacity={1} style={styles.button}>
             <Button color='#3399ff' marginBottom='' title="Data" onPress={DataAlert} />
         </TouchableOpacity>
-        <Button color='#3333ff' title="Déconnection" onPress={DeconnectionAlert} />
+        <Button color='#3333ff' title="Déconnection" onPress={Deconnection} />
       </View>
     </View>
   );
 }
-
-const DataAlert = () => {
-    alert('Redirection vers la page Data');
-};
-
-const DeconnectionAlert = () => {
-    alert('Vous avez été déconnecté avec succès');
-};
 
 const styles = StyleSheet.create({
   container: {
