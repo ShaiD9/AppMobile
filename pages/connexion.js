@@ -1,24 +1,52 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import React, { useState } from 'react';
 
 export default function Connexion({ navigation }) {
+  const [email, setMail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleConnection = () => {
+    fetch('http://206.189.31.42:8000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status_code == 200) {
+        navigation.navigate('Accueil');
+      } else {
+        ConnectionAlertFail();
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>FDR_Mobile - Connexion</Text>
-        <Text style={styles.label}>Nom d'utilisateur :</Text>
-        <TextInput style={styles.input} placeholder="" />
+        <Text style={styles.label}>Nom d'utilisateur (Email) :</Text>
+        <TextInput style={styles.input} placeholder="" onChangeText={text => setMail(text)}/>
         <Text style={styles.label}>Mot de passe :</Text>
-        <TextInput style={styles.input} placeholder="" secureTextEntry={true} />
-        <Button color='#3333ff' title="Connexion" onPress={() => navigation.navigate('Accueil')} />
+        <TextInput style={styles.input} placeholder=""  secureTextEntry={true} onChangeText={text => setPassword(text)}/>
+        <Button color='#3333ff' title="Connexion" onPress={handleConnection} />
       </View>
     </View>
   );
 }
 
-const ConnexionAlert = () => {
-    alert('Connexion effectué avec succès');
+const ConnectionAlertFail = () => {
+  alert('Nom d\'utilisateur ou mot de passe incorrecte');
 };
 
 const styles = StyleSheet.create({
