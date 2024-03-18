@@ -1,15 +1,44 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
+import React, { useEffect } from 'react';
 
 export default function Accueil( { navigation } ) {
   const Retour = () => {
     navigation.navigate('Accueil')
   };
+
+  const handleData = () => {
+    fetch('http://206.189.31.42:8000/api/data', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status_code == 200) {
+        
+      } else {
+        alert('Problème')
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  };
+
+  /*  useEffect(() => {
+    handleData(); //permet d appeller la fonction handleData au chargement de la page
+   }, []); */
+
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>FDR_Mobile - Data</Text>
+        <Button color='#3333ff' title="Refresh Data" onPress={handleData} />
         <Button color='#3333ff' title="Retour" onPress={Retour} />
       </View>
     </View>
