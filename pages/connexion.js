@@ -2,7 +2,7 @@ import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
-export default function Connexion() {
+export default function Connexion({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
