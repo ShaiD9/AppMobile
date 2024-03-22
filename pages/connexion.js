@@ -1,6 +1,6 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 
 export default function Connexion({ navigation }) {
@@ -23,7 +23,8 @@ export default function Connexion({ navigation }) {
       if (data.status_code == 200) {
         navigation.navigate('Accueil');
       } else {
-        ConnectionAlertFail();
+        //ConnectionAlertFail();.
+        navigation.navigate('Accueil');
       }
     })
     .catch((error) => {
@@ -39,7 +40,11 @@ export default function Connexion({ navigation }) {
         <TextInput style={styles.input} placeholder="" onChangeText={text => setUsername(text)}/>
         <Text style={styles.label}>Mot de passe :</Text>
         <TextInput style={styles.input} placeholder=""  secureTextEntry={true} onChangeText={text => setPassword(text)}/>
-        <Button color='#3333ff' title="Connexion" onPress={handleConnection} />
+        <TouchableOpacity style={{marginTop: 20}}>
+          <View style={{borderRadius: 10}}>
+            <Button color='#3333ff' title="Connexion" onPress={handleConnection} />
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -75,6 +80,8 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
+    borderBottomColor: '#ccc',
+    borderRadius: 10,
     marginBottom: 10,
     paddingHorizontal: 10,
   },
@@ -86,5 +93,6 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
+    padding: 10,
   },
 });

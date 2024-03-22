@@ -32,12 +32,12 @@ export default function DataFDR( { navigation } ) {
 
    const renderItem = ({ item }) => (
     <View style={styles.row}>
-      <Text>Id : {item.id}</Text>
-      <Text>Date : {item.date}</Text>
-      <Text>Agence : {item.id_agency}</Text>
-      <Text>Vehicule : {item.id_vehicle}</Text>
-      <Text>Agent : {item.id_agent}</Text>
-      <Text>Tonnage : {item.tonnage} tonnes</Text>
+      <Text><Text style={styles.colonne}>Id : </Text>{item.id}</Text>
+      <Text><Text style={styles.colonne}>Date : </Text>{item.date}</Text>
+      <Text><Text style={styles.colonne}>Agence : </Text>{item.id_agency}</Text>
+      <Text><Text style={styles.colonne}>Vehicule : </Text>{item.id_vehicle}</Text>
+      <Text><Text style={styles.colonne}>Agent : </Text>{item.id_agent}</Text>
+      <Text><Text style={styles.colonne}>Tonnage : </Text>{item.tonnage} tonnes</Text>
     </View>
   );
 
@@ -52,7 +52,7 @@ export default function DataFDR( { navigation } ) {
         />
         <TouchableOpacity style={{marginTop: 20}}>
           <View style={{marginBottom: 10}}>
-            <Button color='#3333ff' title="Refresh Data" onPress={handleData} />
+            <Button color='#3399ff' title="Refresh Data" onPress={handleData} />
           </View>
           <View style={{}}>
             <Button color='#3333ff' title="Retour" onPress={Retour} />
@@ -106,10 +106,14 @@ const styles = StyleSheet.create({
     backgroundColor: '3399ff',
     marginTop: 20,
     marginBottom: 20,
+    borderRadius: 6,
   },
   row: {
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+  },
+  colonne: {
+    fontWeight: 'bold',
   },
 });

@@ -32,9 +32,9 @@ export default function DataAGENCE( { navigation } ) {
 
   const renderItem = ({ item }) => (
     <View style={styles.row}>
-      <Text>Id : {item.id}</Text>
-      <Text>Nom : {item.name}</Text>
-      <Text>Addresse : {item.address}</Text>
+      <Text><Text style={styles.colonne}>Id : </Text>{item.id}</Text>
+      <Text><Text style={styles.colonne}>Nom : </Text>{item.name}</Text>
+      <Text><Text style={styles.colonne}>Addresse : </Text>{item.address}</Text>
     </View>
   );
 
@@ -49,7 +49,7 @@ export default function DataAGENCE( { navigation } ) {
         />
         <TouchableOpacity style={{marginTop: 20}}>
           <View style={{marginBottom: 10}}>
-            <Button color='#3333ff' title="Refresh Data" onPress={handleData} />
+            <Button color='#3399ff' title="Refresh Data" onPress={handleData} />
           </View>
           <View style={{}}>
           <Button color='#3333ff' title="Retour" onPress={Retour} />
@@ -103,10 +103,14 @@ const styles = StyleSheet.create({
     backgroundColor: '3399ff',
     marginTop: 20,
     marginBottom: 20,
+    borderRadius: 6,
   },
   row: {
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+  },
+  colonne: {
+    fontWeight: 'bold',
   },
 });

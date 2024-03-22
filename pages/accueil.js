@@ -40,16 +40,16 @@ export default function Accueil({ navigation }) {
       <View style={styles.card}>
         <Text style={styles.title}>Accueil</Text>
         <TouchableOpacity activeOpacity={1} style={styles.button}>
-            <View style={{marginBottom: 8}}>
-            <Button color='#3399ff' title="FDR" onPress={DataFDR} />
-            </View>
-            <View style={{marginBottom: 8}}>
+            <View style={{marginBottom: 10}}>
             <Button color='#3399ff' title="AGENCE" onPress={DataAGENCE} />
             </View>
-            <View style={{marginBottom: 8}}>
+            <View style={{marginBottom: 10}}>
             <Button color='#3399ff' title="AGENT" onPress={DataAGENT} />
             </View>
-            <View style={{marginBottom: 8}}>
+            <View style={{marginBottom: 10}}>
+            <Button color='#3399ff' title="FDR" onPress={DataFDR} />
+            </View>
+            <View style={{marginBottom: 10}}>
             <Button color='#3399ff' title="VEHICULE" onPress={DataVEHICULE} />
             </View>
             <View style={{marginTop: 15}}>
@@ -104,5 +104,6 @@ const styles = StyleSheet.create({
     backgroundColor: '3399ff',
     marginTop: 20,
     marginBottom: 20,
+    borderRadius: 6,
   },
 });
