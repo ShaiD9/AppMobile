@@ -9,7 +9,7 @@ export default function DataAGENCE( { navigation } ) {
   };
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/dataAGENCE', {
+    fetch('http://206.189.31.42:8000/api/agences', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -38,6 +38,7 @@ export default function DataAGENCE( { navigation } ) {
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>Agences</Text>
+        
         <Button color='#3333ff' title="Refresh Data" onPress={handleData} />
         <Button color='#3333ff' title="Retour" onPress={Retour} />
       </View>

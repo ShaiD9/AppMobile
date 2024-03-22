@@ -9,7 +9,7 @@ export default function DataFDR( { navigation } ) {
   };
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/dataFDR', {
+    fetch('http://206.189.31.42:8000/api/fdr', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

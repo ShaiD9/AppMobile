@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import React, { useState } from 'react';
 
 export default function Connexion({ navigation }) {
-  const [email, setMail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleConnection = () => {
@@ -14,7 +14,7 @@ export default function Connexion({ navigation }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: email,
+        username: username,
         password: password,
       }),
     })
@@ -35,8 +35,8 @@ export default function Connexion({ navigation }) {
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>Connexion</Text>
-        <Text style={styles.label}>Nom d'utilisateur (Email) :</Text>
-        <TextInput style={styles.input} placeholder="" onChangeText={text => setMail(text)}/>
+        <Text style={styles.label}>Nom d'utilisateur :</Text>
+        <TextInput style={styles.input} placeholder="" onChangeText={text => setUsername(text)}/>
         <Text style={styles.label}>Mot de passe :</Text>
         <TextInput style={styles.input} placeholder=""  secureTextEntry={true} onChangeText={text => setPassword(text)}/>
         <Button color='#3333ff' title="Connexion" onPress={handleConnection} />

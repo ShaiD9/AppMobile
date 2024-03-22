@@ -9,7 +9,7 @@ export default function DataVEHICULE( { navigation } ) {
   };
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/dataVEHICULE', {
+    fetch('http://206.189.31.42:8000/api/vehicules', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
