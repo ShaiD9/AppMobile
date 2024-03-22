@@ -33,8 +33,8 @@ export default function DataVEHICULE( { navigation } ) {
   const renderItem = ({ item }) => (
     <View style={styles.row}>
       <Text><Text style={styles.colonne}>Id : </Text>{item.id}</Text>
-      <Text><Text style={styles.colonne}>Name : </Text>{item.name}</Text>
-      <Text><Text style={styles.colonne}>Registration : </Text>{item.registration}</Text>
+      <Text><Text style={styles.colonne}>Nom : </Text>{item.name}</Text>
+      <Text><Text style={styles.colonne}>Immatriculation : </Text>{item.registration}</Text>
     </View>
   );
 
