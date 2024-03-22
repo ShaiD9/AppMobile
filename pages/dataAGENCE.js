@@ -18,7 +18,7 @@ export default function DataAGENCE( { navigation } ) {
       if (data.status_code == 200) {
         setData(data.items); //permet de stocker les données de l'API dans la variable data
       } else {
-        //alert('Problème') debug
+        
       }
     })
     .catch((error) => {

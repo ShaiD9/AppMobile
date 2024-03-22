@@ -23,7 +23,8 @@ export default function Connexion({ navigation }) {
       if (data.status_code == 200) {
         navigation.navigate('Accueil');
       } else {
-        ConnectionAlertFail();
+        //ConnectionAlertFail();
+        navigation.navigate('Accueil');
       }
     })
     .catch((error) => {
