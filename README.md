@@ -3,7 +3,7 @@
 ## Informations générales
 - Nom du projet : APP_MOBILE
 - Date du projet : 22/03/2024
-- Résumé : Création d'une application mobile permettant de voir les données du projet en Laravel
+- Résumé : Création d'une application mobile permettant de voir les données du projet FDR avec le framework Laravel.
 
 ## Fonctionalité de l'application
 - L'application permet de se connecter 
@@ -17,7 +17,7 @@
 - J'utilise diferente technologie pour la mise en place de ce projet :
     - J'utilise React-native pour le developement de l'application
     - J'utilise aussi Expo qui me m'aide a developement et a concevoir mon application mobile
-    - Mon application fonctionne avec l'aide de mon api precedemment réalisé, qui me permet de d'utiliser ces routes pour aller chercher les informations nécessaire
+    - Mon application fonctionne avec l'aide de mon API precedemment réalisé, qui me permet de d'utiliser ces routes pour aller chercher les informations nécessaire au bon fonctionnement de l'application.
 
 ## Rappel des exigences 
 Voici un rappel des exigences :
@@ -41,7 +41,7 @@ uniforme, incluant la palette de couleurs et les éléments de design utilisés.
 - Intégration avec le Back-End : L'application devra être correctement reliée à un
 serveur back-end. Cette intégration implique la gestion des requêtes HTTP, le
 traitement des données utilisateur, et la communication efficace entre le
-front-end et le back-end pour une expérience utilisateur fluide.``
+front-end et le back-end pour une expérience utilisateur fluide.
 
 ### Voici les étapes a suivre pour installer le projet :
 
