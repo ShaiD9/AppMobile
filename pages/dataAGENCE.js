@@ -47,12 +47,12 @@ export default function DataAGENCE( { navigation } ) {
           renderItem={renderItem}
           keyExtractor={item => item.id.toString()}
         />
-        <TouchableOpacity style={{marginTop: 20}}>
+        <TouchableOpacity style={styles.button}>
           <View style={{marginBottom: 10}}>
-            <Button color='#3399ff' title="Refresh Data" onPress={handleData} />
+            <Button color='#a6a6a6' title="Refresh Data" onPress={handleData} />
           </View>
           <View style={{}}>
-          <Button color='#3333ff' title="Retour" onPress={Retour} />
+          <Button color='#666666' title="Retour" onPress={Retour} />
           </View>
         </TouchableOpacity>
       </View>
@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: '3399ff',
     marginTop: 20,
     marginBottom: 20,
     borderRadius: 6,

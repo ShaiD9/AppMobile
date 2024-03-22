@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Connexion">
+      <Stack.Navigator initialRouteName="Connexion" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Connexion" component={Connexion} />
         <Stack.Screen name="Accueil" component={Accueil} />
         <Stack.Screen name="DataFDR" component={DataFDR} />

@@ -1,6 +1,7 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Alert  } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export default function Accueil({ navigation }) {
   const DataFDR = () => {
@@ -40,21 +41,21 @@ export default function Accueil({ navigation }) {
       <View style={styles.card}>
         <Text style={styles.title}>Accueil</Text>
         <TouchableOpacity activeOpacity={1} style={styles.button}>
-            <View style={{marginBottom: 10}}>
-            <Button color='#3399ff' title="AGENCE" onPress={DataAGENCE} />
-            </View>
-            <View style={{marginBottom: 10}}>
-            <Button color='#3399ff' title="AGENT" onPress={DataAGENT} />
-            </View>
-            <View style={{marginBottom: 10}}>
-            <Button color='#3399ff' title="FDR" onPress={DataFDR} />
-            </View>
-            <View style={{marginBottom: 10}}>
-            <Button color='#3399ff' title="VEHICULE" onPress={DataVEHICULE} />
-            </View>
-            <View style={{marginTop: 15}}>
-            <Button color='#3333ff' title="Déconnection" onPress={Deconnection} />
-            </View>
+          <View style={{marginBottom: 10}}>
+            <Button color='#66ccff' title="AGENCE" onPress={DataAGENCE} />
+          </View>
+          <View style={{marginBottom: 10}}>
+            <Button color='#66ccff' title="AGENT" onPress={DataAGENT} />
+          </View>
+          <View style={{marginBottom: 10}}>
+            <Button color='#66ccff' title="FDR" onPress={DataFDR} />
+          </View>
+          <View style={{marginBottom: 10}}>
+            <Button color='#66ccff' title="VEHICULE" onPress={DataVEHICULE} />
+          </View>
+          <View style={{marginTop: 15}}>
+            <Button color='#666666' title="Déconnection" onPress={Deconnection} />
+          </View>
         </TouchableOpacity>
       </View>
     </View>

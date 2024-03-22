@@ -49,10 +49,10 @@ export default function DataVEHICULE( { navigation } ) {
         />
         <TouchableOpacity style={{marginTop: 20}}>
           <View style={{marginBottom: 10}}>
-            <Button color='#3399ff' title="Refresh Data" onPress={handleData} />
+            <Button color='#a6a6a6' title="Refresh Data" onPress={handleData} />
           </View>
           <View style={{}}>
-            <Button color='#3333ff' title="Retour" onPress={Retour} />
+            <Button color='#666666' title="Retour" onPress={Retour} />
           </View>
         </TouchableOpacity>
       </View>

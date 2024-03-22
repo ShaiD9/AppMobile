@@ -23,8 +23,7 @@ export default function Connexion({ navigation }) {
       if (data.status_code == 200) {
         navigation.navigate('Accueil');
       } else {
-        //ConnectionAlertFail();.
-        navigation.navigate('Accueil');
+        ConnectionAlertFail();
       }
     })
     .catch((error) => {
@@ -42,7 +41,7 @@ export default function Connexion({ navigation }) {
         <TextInput style={styles.input} placeholder=""  secureTextEntry={true} onChangeText={text => setPassword(text)}/>
         <TouchableOpacity style={{marginTop: 20}}>
           <View style={{borderRadius: 10}}>
-            <Button color='#3333ff' title="Connexion" onPress={handleConnection} />
+            <Button color='#666666' title="Connexion" onPress={handleConnection} />
           </View>
         </TouchableOpacity>
       </View>
