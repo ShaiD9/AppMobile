@@ -51,12 +51,7 @@ front-end et le back-end pour une expérience utilisateur fluide.
       git clone https://github.com/ShaiD9/AppMobile.git
     ```
 
-2. Exécutez les migrations.
-
-   ```bash
-      php artisan migrate```
-
-3. Exécutez l'appication.
+2. Exécutez l'appication.
 
    ```bash
       npx expo start```
