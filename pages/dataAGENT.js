@@ -32,6 +32,7 @@ export default function DataAGENT( { navigation } ) {
 
   const renderItem = ({ item }) => (
     <View style={styles.row}>
+      <Text>Id : {item.id}</Text>
       <Text>Prenom : {item.firstname}</Text>
       <Text>Nom : {item.surname}</Text>
     </View>
