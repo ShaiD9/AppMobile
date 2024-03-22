@@ -1,26 +1,22 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
 
 export default function DataAGENCE( { navigation } ) {
+  const [data, setData] = useState([]); //permet de stocker les données de l'API dans une variable data
+
   const Retour = () => {
     navigation.navigate('Accueil')
   };
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/agences', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-      }),
-    })
+    fetch('http://206.189.31.42:8000/api/agences')
     .then(response => response.json())
     .then(data => {
       if (data.status_code == 200) {
-        
+        setData(data.items); //permet de stocker les données de l'API dans la variable data
       } else {
         //alert('Problème') debug
       }
@@ -30,17 +26,34 @@ export default function DataAGENCE( { navigation } ) {
     });
   };
 
-  /*  useEffect(() => {
+  useEffect(() => {
     handleData(); //permet d appeller la fonction handleData au chargement de la page
-   }, []); */
+   }, []);
+
+  const renderItem = ({ item }) => (
+    <View style={styles.row}>
+      <Text>Nom : {item.name}</Text>
+      <Text>Addresse : {item.address}</Text>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.title}>Agences</Text>
-        
-        <Button color='#3333ff' title="Refresh Data" onPress={handleData} />
-        <Button color='#3333ff' title="Retour" onPress={Retour} />
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id.toString()}
+        />
+        <TouchableOpacity style={{marginTop: 20}}>
+          <View style={{marginBottom: 10}}>
+            <Button color='#3333ff' title="Refresh Data" onPress={handleData} />
+          </View>
+          <View style={{}}>
+          <Button color='#3333ff' title="Retour" onPress={Retour} />
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -65,7 +78,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    height: 325,
+    height: 600,
     width: 325,
   },
   input: {
@@ -89,5 +102,10 @@ const styles = StyleSheet.create({
     backgroundColor: '3399ff',
     marginTop: 20,
     marginBottom: 20,
+  },
+  row: {
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
 });
