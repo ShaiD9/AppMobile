@@ -1,8 +1,9 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { FlatList } from 'react-native';
+import { UserTokenContext } from '../Context/userTokenContext';
 
 export default function DataAGENCE( { navigation } ) {
   const [data, setData] = useState([]); //permet de stocker les données de l'API dans une variable data
@@ -10,6 +11,8 @@ export default function DataAGENCE( { navigation } ) {
   const Retour = () => {
     navigation.navigate('Accueil')
   };
+
+  const {userToken} = useContext(UserTokenContext);
 
   const handleData = () => {
     fetch('http://206.189.31.42:8000/api/agences')

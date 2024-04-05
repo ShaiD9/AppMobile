@@ -1,12 +1,14 @@
 import { auto } from 'eol';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
+import { UserTokenContext } from '../Context/userTokenContext';
 
 export default function Connexion({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
- 
+  const {userToken,setToken} = useContext(UserTokenContext);
+
   const handleConnection = () => {
     fetch('http://206.189.31.42:8000/api/login', {
       method: 'POST',
@@ -21,6 +23,7 @@ export default function Connexion({ navigation }) {
     .then(response => response.json())
     .then(data => {
       if (data.status_code == 200) {
+        setToken(data.token)
         navigation.navigate('Accueil');
       } else {
         ConnectionAlertFail();
