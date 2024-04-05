@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 export default function Connexion({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+ 
   const handleConnection = () => {
     fetch('http://206.189.31.42:8000/api/login', {
       method: 'POST',

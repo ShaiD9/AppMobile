@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
 
 export default function DataAGENT( { navigation } ) {
-  const [data, setData] = useState([]); //permet de stocker les données de l'API dans une variable data 
+  const [data, setData] = useState([]); //permet de stocker les données de l'API dans une variable data
 
   const Retour = () => {
     navigation.navigate('Accueil')
