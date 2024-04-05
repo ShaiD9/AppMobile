@@ -1,8 +1,5 @@
 import React, { useState,useContext } from 'react';
-import { auto } from 'eol';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Alert  } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import { UserTokenContext } from '../Context/userTokenContext';
 
 export default function Accueil({ navigation }) {

@@ -1,5 +1,3 @@
-import { auto } from 'eol';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 'react-native';
 import React, { useEffect, useState, useContext } from 'react';
 import { FlatList } from 'react-native';
