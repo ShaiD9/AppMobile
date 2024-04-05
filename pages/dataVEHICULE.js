@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity  } from 're
 import React, { useEffect, useState, useContext } from 'react';
 import { FlatList } from 'react-native';
 import { UserTokenContext } from '../Context/userTokenContext';
+import BouttonRetour from '../component/btnRetour';
+import BouttonRafraichir from '../component/btnRafraichir';
 
 export default function DataVEHICULE( { navigation } ) {
   const [data, setData] = useState([]); //permet de stocker les données de l'API dans une variable data
@@ -51,12 +53,8 @@ export default function DataVEHICULE( { navigation } ) {
           keyExtractor={item => item.id.toString()}
         />
         <TouchableOpacity style={{marginTop: 20}}>
-          <View style={{marginBottom: 10}}>
-            <Button color='#a6a6a6' title="Refresh Data" onPress={handleData} />
-          </View>
-          <View style={{}}>
-            <Button color='#666666' title="Retour" onPress={Retour} />
-          </View>
+          <BouttonRafraichir onPress={handleData}/>
+          <BouttonRetour onPress={Retour}/>
         </TouchableOpacity>
       </View>
     </View>
