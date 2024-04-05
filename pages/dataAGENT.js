@@ -15,13 +15,17 @@ export default function DataAGENT( { navigation } ) {
   const {userToken} = useContext(UserTokenContext);
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/agents')
+    fetch('http://206.189.31.42:8000/api/agents', {
+      headers: {
+        Authorization: `Bearer ${userToken}`
+      }
+    })
     .then(response => response.json())
     .then(data => {
       if (data.status_code == 200) {
-        setData(data.items); //permet de stocker les données de l'API dans la variable data
+      setData(data.items); //permet de stocker les données de l'API dans la variable data
       } else {
-        
+      
       }
     })
     .catch((error) => {

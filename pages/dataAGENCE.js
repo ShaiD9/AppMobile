@@ -15,7 +15,11 @@ export default function DataAGENCE( { navigation } ) {
   const {userToken} = useContext(UserTokenContext);
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/agences')
+    fetch('http://206.189.31.42:8000/api/agences', {
+      headers: {
+        Authorization: `Bearer ${userToken}`
+      }
+    })
     .then(response => response.json())
     .then(data => {
       if (data.status_code == 200) {
