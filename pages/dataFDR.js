@@ -27,7 +27,7 @@ export default function DataFDR( { navigation } ) {
   };
 
   useEffect(() => {
-    handleData(); //permet d appeller la fonction handleData au chargement de la page
+    handleData(); //permet d appeller la fonction handleData au chargement de la page 
    }, []);
 
    const renderItem = ({ item }) => (
