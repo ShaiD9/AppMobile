@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Connexion from './pages/Connexion.js';
-import Accueil from './pages/Accueil.js';
-import DataFDR from './pages/DataFDR.js';
-import DataAGENCE from './pages/DataAGENCE.js';
-import DataAGENT from './pages/DataAGENT.js';
+import Connexion from './pages/connexion.js';
+import Accueil from './pages/accueil.js';
+import DataFDR from './pages/dataFDR.js';
+import DataAGENCE from './pages/dataAGENCE.js';
+import DataAGENT from './pages/dataAGENT.js';
 import DataVEHICULE from './pages/dataVEHICULE.js';
 
 const Stack = createNativeStackNavigator();
