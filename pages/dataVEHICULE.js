@@ -15,7 +15,7 @@ export default function DataVEHICULE( { navigation } ) {
   const {userToken} = useContext(UserTokenContext);
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/vehicules', {
+    fetch('https://api.fdronline.live/api/vehicules', {
       headers: {
         Authorization: `Bearer ${userToken}`
       }

@@ -9,7 +9,7 @@ export default function Connexion({ navigation }) {
   const {userToken,setToken} = useContext(UserTokenContext);
 
   const handleConnection = () => {
-    fetch('http://206.189.31.42:8000/api/login', {
+    fetch('https://api.fdronline.live/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

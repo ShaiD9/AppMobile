@@ -15,7 +15,7 @@ export default function DataAGENT( { navigation } ) {
   const {userToken} = useContext(UserTokenContext);
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/agents', {
+    fetch('https://api.fdronline.live/api/agents', {
       headers: {
         Authorization: `Bearer ${userToken}`
       }

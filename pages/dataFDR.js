@@ -15,7 +15,7 @@ export default function DataFDR( { navigation } ) {
   const {userToken} = useContext(UserTokenContext);
 
   const handleData = () => {
-    fetch('http://206.189.31.42:8000/api/fdr', {
+    fetch('https://api.fdronline.live/api/fdr', {
       headers: {
         Authorization: `Bearer ${userToken}`
       }
