@@ -55,7 +55,7 @@ export default function Accueil({ navigation }) {
             <Button color='#66ccff' title="VEHICULE" onPress={DataVEHICULE} />
           </View>
           <View style={{marginTop: 15}}>
-            <Button color='#666666' title="Déconnection" onPress={Deconnection} />
+            <Button color='#666666' title="Déconnexion" onPress={Deconnection} />
           </View>
         </TouchableOpacity>
       </View>
